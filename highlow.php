@@ -1,3 +1,4 @@
+
 <?php
 
 //High Low Guessing Game
@@ -6,12 +7,33 @@
 //Codeup Baddies
 //Partner=Alex
 
-//initialize the counter
+//get the arguments from command line and verify that they are valid
 
+if ($argc != 3) //fail if there are not exactly 3 variables
+{
+    fwrite(STDOUT, 'Wrong number of arguments.  Please try running again.  Enter the low end value followed by the high end value (ex: php highlow.php 1 100)'. PHP_EOL);	   	
+    exit(1);
+}
+if ((int)$argv[1] > (int)$argv[2]) //if the second number is smaller 
+{
+    //set range for guesses
+	define('LOWEND',(int)$argv[2]);
+	define('TOPEND',(int)$argv[1]);
+}
+elseif ((int)$argv[1] < (int)$argv[2]) //if the first number is smaller 
+{
+	//set range for guesses
+	define('LOWEND',(int)$argv[1]);
+	define('TOPEND',(int)$argv[2]);
+}
+else //fail if the range doesn't make sense
+{
+	fwrite(STDOUT, 'Invalid range.  Please try running again.  Enter a low end value followed by a high end value (ex: php highlow.php 1 100)' . PHP_EOL);	
+    exit(1);
+}
+
+//initialize the counter
 $counter =0;
-//set range for guesses
-define('LOWEND',1);
-define('TOPEND',100);
 
 // pick a random number between low and high end
 
