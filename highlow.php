@@ -12,7 +12,7 @@ define('TOPEND',100);
 
 // pick a random number between low and high end
 
-$comp_pick=rand(LOWEND,TOPEND);
+$comp_pick=mt_rand(LOWEND,TOPEND);
 
 do {
 
