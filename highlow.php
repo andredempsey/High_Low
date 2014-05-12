@@ -45,11 +45,11 @@ do {
 		fwrite(STDOUT, "GOOD GUESS!\n");
 		if ($counter==1) 
 		{
-			fwrite(STDOUT, "Awesome, you guess the right number in ONE guess!\n");
+			fwrite(STDOUT, "Awesome, you guessed the right number in ONE guess!\n");
 		} 
 		else 
 		{
-		fwrite(STDOUT, "You guess the right number in {$counter} guesses!\n");
+		fwrite(STDOUT, "You guessed the right number in {$counter} guesses!\n");
 		}
 		exit(0);
 	}
