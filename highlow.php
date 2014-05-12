@@ -6,6 +6,9 @@
 //Codeup Baddies
 //Partner=Alex
 
+//initialize the counter
+
+$counter =0;
 //set range for guesses
 define('LOWEND',1);
 define('TOPEND',100);
@@ -23,6 +26,7 @@ do {
 // Get the input from user
 	
 	$guess = fgets(STDIN);
+	$counter++;
 
 	if ($guess<LOWEND||$guess>TOPEND) //make sure guess is within the range
 	{
@@ -39,6 +43,14 @@ do {
 	else // guess the number, declare "GOOD GUESS!"
 	{
 		fwrite(STDOUT, "GOOD GUESS!\n");
+		if ($counter==1) 
+		{
+			fwrite(STDOUT, "Awesome, you guess the right number in ONE guess!\n");
+		} 
+		else 
+		{
+		fwrite(STDOUT, "You guess the right number in {$counter} guesses!\n");
+		}
 		exit(0);
 	}
 }
